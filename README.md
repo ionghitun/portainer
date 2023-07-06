@@ -2,10 +2,9 @@
 
 ### Install notes
 
-1. Clone this repository
-2. Copy .env.example into .env
-3. Change `EXTERNAL_PORT` to something suitable for you
-4. Start it by running `docker-compose up -d`
-5. Navigate to <ip>:<EXTERNAL_PORT> to see portainer info
+- copy `.env.example` to `.env` and edit it to match your settings
+- if necessary modify `docker/nginx/custom_dev.conf` to match you `DOMAIN_HOST`
+- run `docker-compose up -d` to bring up containers
+- navigate to `DOMAIN_HOST` to see portainer info
 
 _Happy Coding!_
