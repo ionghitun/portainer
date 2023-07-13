@@ -7,4 +7,8 @@
 - run `docker-compose up -d` to bring up containers
 - navigate to `DOMAIN_HOST` to see portainer info
 
+## Dependencies
+
+- `nginx-proxy` - https://github.com/ionghitun/nginx-proxy
+
 _Happy Coding!_
