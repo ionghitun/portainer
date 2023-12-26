@@ -24,7 +24,7 @@ services:
     portainer-portainer:
         container_name: portainer-portainer
         restart: always
-        image: portainer/portainer-ce:latest
+        image: portainer/portainer-ce
         volumes:
             - portainer_data:/data
             - /var/run/docker.sock:/var/run/docker.sock
