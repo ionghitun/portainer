@@ -2,7 +2,7 @@ version: '3.9'
 services:
     portainer-nginx:
         container_name: portainer-nginx
-        restart: always
+        restart: unless-stopped
         build:
             context: ./
             dockerfile: docker/nginx/Dockerfile
@@ -23,16 +23,13 @@ services:
 
     portainer-portainer:
         container_name: portainer-portainer
-        restart: always
         image: portainer/portainer-ce
+        restart: unless-stopped
         volumes:
-            - portainer_data:/data
+            - ./data:/data
             - /var/run/docker.sock:/var/run/docker.sock
         networks:
             - portainer
-
-volumes:
-    portainer_data:
 
 networks:
     portainer:
