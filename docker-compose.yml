@@ -2,14 +2,12 @@ services:
     portainer-nginx:
         container_name: portainer-nginx
         restart: unless-stopped
-        build:
-            context: ./
-            dockerfile: docker/nginx/Dockerfile
+        image: nginx:latest
         volumes:
             - ./docker/nginx/${VHOST_FILE}:/etc/nginx/conf.d/custom.conf
         ports:
             - "80"
-        links:
+        depends_on:
             - portainer-portainer
         environment:
             VIRTUAL_HOST: ${DOMAIN_HOST}
@@ -22,7 +20,7 @@ services:
 
     portainer-portainer:
         container_name: portainer-portainer
-        image: portainer/portainer-ce
+        image: portainer/portainer-ce:latest
         restart: unless-stopped
         volumes:
             - ./data:/data
