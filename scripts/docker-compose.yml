@@ -4,7 +4,7 @@ services:
         image: nginx:${NGINX_VERSION}
         restart: unless-stopped
         volumes:
-            - ./docker/nginx/${VHOST_FILE}:/etc/nginx/conf.d/custom.conf
+            - ./nginx/${VHOST_FILE}:/etc/nginx/conf.d/custom.conf
         ports:
             - "80"
         depends_on:
@@ -24,7 +24,7 @@ services:
         image: portainer/portainer-ce:${PORTAINER_VERSION}
         restart: unless-stopped
         volumes:
-            - ./data:/data
+            - ../data:/data
             - /var/run/docker.sock:/var/run/docker.sock
         networks:
             - portainer
