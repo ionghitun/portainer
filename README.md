@@ -1,6 +1,6 @@
 # Portainer Docker Stack
 
-This project provides a Docker Compose setup for running Portainer behind nginx and nginx-proxy.
+This project provides a Docker Compose setup for running Portainer behind nginx and [nginx-proxy](https://github.com/ionghitun/nginx-proxy).
 
 ## Prerequisites
 
